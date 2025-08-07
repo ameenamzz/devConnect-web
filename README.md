@@ -19,3 +19,5 @@ If you are developing a production application, we recommend using TypeScript wi
 2 - installed Tailwind 
 3 - installed daisy UI
 4 - Added Navbar Component
+5 - Created Component for Navbar -> Navbar.jsx
+6 - Installed react-router-dom
