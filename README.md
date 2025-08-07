@@ -11,13 +11,19 @@ Currently, two official plugins are available:
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
-
-
 # devConnect-web
 
 1 - Created a Vite + React Application
-2 - installed Tailwind 
+2 - installed Tailwind
 3 - installed daisy UI
 4 - Added Navbar Component
 5 - Created Component for Navbar -> Navbar.jsx
 6 - Installed react-router-dom
+7 - Implemented routes
+8 - created footer
+9 - created Login Page
+
+10 - Insalled Axios
+11 - CORS - install CORS middleware in Backend
+12 - Add CORS middleware with Configuration : origin, credentials: true // to get Token set in Cookies
+13 - In Axios add {withCredential : true} // to get Token set in Cookies
