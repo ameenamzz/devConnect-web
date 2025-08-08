@@ -30,4 +30,6 @@ If you are developing a production application, we recommend using TypeScript wi
 
 14 - Installed Redux Toolkit and react-redux
 15 - ConfiguredStore => CreatedSlic => add Reducer to Store
-16
+
+16 - Token Validation
+17 - 
