@@ -27,3 +27,7 @@ If you are developing a production application, we recommend using TypeScript wi
 11 - CORS - install CORS middleware in Backend
 12 - Add CORS middleware with Configuration : origin, credentials: true // to get Token set in Cookies
 13 - In Axios add {withCredential : true} // to get Token set in Cookies
+
+14 - Installed Redux Toolkit and react-redux
+15 - ConfiguredStore => CreatedSlic => add Reducer to Store
+16
