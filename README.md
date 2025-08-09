@@ -32,4 +32,6 @@ If you are developing a production application, we recommend using TypeScript wi
 15 - ConfiguredStore => CreatedSlic => add Reducer to Store
 
 16 - Token Validation
-17 - 
+17 - Created Logout feature
+
+18- 
