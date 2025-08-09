@@ -9,9 +9,9 @@ const EditProfile = () => {
   const [photoURL, setPhotoURL] = useState("");
   return (
     <div className="flex justify-center mt-5">
-      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-sm border p-10">
+      <fieldset className="fieldset bg-base-300 border-base-300 rounded-box w-sm border p-10">
         <legend className="fieldset-legend">Edit Profile</legend>
-
+    
         <label className="label">First Name</label>
         <input
           type="text"
@@ -67,7 +67,7 @@ const EditProfile = () => {
           onChange={(e) => setPhotoURL(e.target.value)}
         />
 
-        <button className="btn btn-neutral mt-4">Save</button>
+        <button className="btn btn-primary mt-4">Save</button>
       </fieldset>
     </div>
   );

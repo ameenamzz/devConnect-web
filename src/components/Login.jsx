@@ -1,16 +1,22 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
 const Login = () => {
-  const [email, setEmail] = useState("amina88@gmail.com");
+  const [email, setEmail] = useState("ameen123@gmail.com");
   const [password, setPassword] = useState("amina27May@1234");
   const [error, setError] = useState();
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/"); // prevents back button from going to login
+    }
+  }, [user, navigate]);
 
   const handleLogin = async () => {
     try {
