@@ -49,7 +49,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <a>Settings</a>
+                  <Link to="/connections">My Connections</Link>
                 </li>
                 <li>
                   <a onClick={handleLogOut}>Logout</a>

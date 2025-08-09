@@ -34,4 +34,8 @@ If you are developing a production application, we recommend using TypeScript wi
 16 - Token Validation
 17 - Created Logout feature
 
-18- 
+18- created feed page
+19 - created edit profile feature
+20 - show toast message on updating succes
+
+21 - See all my connections
