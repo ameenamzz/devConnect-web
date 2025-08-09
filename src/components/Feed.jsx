@@ -25,7 +25,7 @@ const Feed = () => {
   return (
     feed && (
       <div>
-        <UserCard user={feed[5]} />
+        <UserCard user={feed[0]} />
       </div>
     )
   );
