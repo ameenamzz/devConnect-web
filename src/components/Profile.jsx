@@ -1,10 +1,13 @@
 import EditProfile from "./EditProfile";
-
+import { useDispatch, useSelector } from "react-redux";
 const Profile = () => {
+  const user = useSelector((store) => store.user);
   return (
-    <div>
-      <EditProfile />
-    </div>
+    user && (
+      <div>
+        <EditProfile editUser={user} />
+      </div>
+    )
   );
 };
 
