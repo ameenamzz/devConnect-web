@@ -21,10 +21,19 @@ const Connections = () => {
     fetchConnections();
   }, []);
 
-  return (
-    <div>
-      <ConnectionList />
+  return connection ? (
+    <div className="mt-10">
+      <h1 className="p-4 pb-2 text-xl font-bold opacity-60 tracking-wide flex justify-center">
+        Connections
+      </h1>
+      {connection.map((con) => (
+        <ConnectionList connection={con} />
+      ))}
     </div>
+  ) : (
+    <h1 className="p-4 pb-2 text-xl font-bold opacity-60 tracking-wide flex justify-center">
+      No Connections
+    </h1>
   );
 };
 
