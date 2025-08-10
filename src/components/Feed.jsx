@@ -9,7 +9,6 @@ const Feed = () => {
   const dispatch = useDispatch();
   const fetchFeed = async () => {
     try {
-      if (feed) return;
       const res = await axios.get(BASE_URL + "/feed", {
         withCredentials: true,
       });
@@ -24,12 +23,16 @@ const Feed = () => {
 
   // if (feed.length === 0) return;
 
-  return (
-    feed && (
-      <div>
-        <UserCard user={feed[0]} />
-      </div>
-    )
+  return feed && feed.length > 0 ? (
+    <div>
+      <UserCard user={feed[0]} />
+    </div>
+  ) : (
+    <div className="mt-10">
+      <h1 className="p-4 pb-2 text-xl font-bold opacity-60 tracking-wide flex justify-center">
+        No Users to show
+      </h1>
+    </div>
   );
 };
 
