@@ -38,4 +38,6 @@ If you are developing a production application, we recommend using TypeScript wi
 19 - created edit profile feature
 20 - show toast message on updating succes
 
-21 - See all my connections
+21 - See all  connections in connections.jsx
+22 - See all  requests in request.jx
+23 - Creaeted connection Accept/Reject feature
