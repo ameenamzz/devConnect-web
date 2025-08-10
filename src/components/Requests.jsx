@@ -24,14 +24,19 @@ const Requests = () => {
     fetchRequest();
   }, []);
 
-  return (
-    reuquests && (
-      <div className="mt-10">
-        {reuquests.map((req, _id) => (
-          <ConnectionList key={_id} connection={req.fromUserId} />
-        ))}
-      </div>
-    )
+  return reuquests ? (
+    <div className="mt-10">
+      <h1 className="p-4 pb-2 text-xl font-bold opacity-60 tracking-wide flex justify-center">
+        Requests
+      </h1>
+      {reuquests.map((req, _id) => (
+        <ConnectionList key={_id} connection={req.fromUserId} />
+      ))}
+    </div>
+  ) : (
+    <h1 className="p-4 pb-2 text-xl font-bold opacity-60 tracking-wide flex justify-center">
+      No Requests
+    </h1>
   );
 };
 
