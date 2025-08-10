@@ -14,7 +14,7 @@ const Requests = () => {
         withCredentials: true,
       });
       console.log(res.data.data);
-      dispatch(addRequest(res.data.data));
+      dispatch(addRequest(res?.data?.data));
     } catch (error) {
       console.log(error);
     }
@@ -24,19 +24,21 @@ const Requests = () => {
     fetchRequest();
   }, []);
 
-  return reuquests ? (
+  return reuquests && reuquests.length > 0 ? (
     <div className="mt-10">
       <h1 className="p-4 pb-2 text-xl font-bold opacity-60 tracking-wide flex justify-center">
         Requests
       </h1>
       {reuquests.map((req, _id) => (
-        <ConnectionList key={_id} connection={req.fromUserId} />
+        <ConnectionList key={_id} connection={req.fromUserId} _id={req._id} />
       ))}
     </div>
   ) : (
-    <h1 className="p-4 pb-2 text-xl font-bold opacity-60 tracking-wide flex justify-center">
-      No Requests
-    </h1>
+    <div className="mt-10">
+      <h1 className="p-4 pb-2 text-xl font-bold opacity-60 tracking-wide flex justify-center">
+        No Requests
+      </h1>
+    </div>
   );
 };
 

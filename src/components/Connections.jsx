@@ -21,7 +21,7 @@ const Connections = () => {
     fetchConnections();
   }, []);
 
-  return connection ? (
+  return connection && connection.length != 0 ? (
     <div className="mt-10">
       <h1 className="p-4 pb-2 text-xl font-bold opacity-60 tracking-wide flex justify-center">
         Connections
@@ -31,9 +31,11 @@ const Connections = () => {
       ))}
     </div>
   ) : (
-    <h1 className="p-4 pb-2 text-xl font-bold opacity-60 tracking-wide flex justify-center">
-      No Connections
-    </h1>
+    <div className="mt-10">
+      <h1 className="p-4 pb-2 text-xl font-bold opacity-60 tracking-wide flex justify-center">
+        No Connections
+      </h1>
+    </div>
   );
 };
 
