@@ -22,6 +22,8 @@ const Feed = () => {
     fetchFeed();
   }, []);
 
+  // if (feed.length === 0) return;
+
   return (
     feed && (
       <div>

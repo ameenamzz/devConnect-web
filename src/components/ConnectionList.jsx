@@ -1,7 +1,8 @@
 import React from "react";
 
 const ConnectionList = ({ connection }) => {
-  const { firstName, lastName, photURL, skills, description } = connection;
+  const { firstName, lastName, photURL, skills, description } =
+    connection
   return (
     <div className="flex justify-center mb-5">
       <ul className="list bg-base-300 rounded-box shadow-md w-[30%]">
