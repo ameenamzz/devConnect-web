@@ -25,10 +25,14 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post(BASE_URL + "/login", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        BASE_URL + "/login",
+        {
+          email,
+          password,
+        },
+        { withCredentials: true }
+      );
       dispatch(addUser(res.data));
       navigate("/");
     } catch (error) {
@@ -64,7 +68,7 @@ const Login = () => {
       {!isLogIn && toast && (
         <div className="toast toast-top toast-center mt-15">
           <div className="alert alert-success">
-            <span>Message sent successfully.</span>
+            <span>Signed up successfully. redirecting to login...</span>
           </div>
         </div>
       )}
