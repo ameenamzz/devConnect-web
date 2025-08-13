@@ -38,13 +38,13 @@ If you are developing a production application, we recommend using TypeScript wi
 19 - created edit profile feature
 20 - show toast message on updating succes
 
-21 - See all  connections in connections.jsx
-22 - See all  requests in request.jx
+21 - See all connections in connections.jsx
+22 - See all requests in request.jx
 23 - Creaeted connection Accept/Reject feature
 
 24 - Created User interested/ignore feature
 
-# Deployment 
+# Deployment
 
 1 - Signup on AWS
 2 - Launch Instance
@@ -52,13 +52,37 @@ If you are developing a production application, we recommend using TypeScript wi
 4 - ssh -i command
 5 - install node version 22.
 6 - git clone (Frontend)
-  - npm insall -> in VM
-  - npm run build
-  - sudo apt udate
-  - sudo apt install nginx
-  - sudo systemctl start nginx
-  - sudo systemctl enable nginx 
-  - copy code from dist(build files) to /var/www/html 
-  - sud scp -r dist/* /var/www/html 
-  - Enable port :80 of your instance
-  
+
+- npm insall -> in VM
+- npm run build
+- sudo apt udate
+- sudo apt install nginx
+- sudo systemctl start nginx
+- sudo systemctl enable nginx
+- copy code from dist(build files) to /var/www/html
+- sud scp -r dist/* /var/www/html
+- Enable port :80 of your instance
+
+7 - git clone (Backend)
+
+    - allowded ec2 instance public IP on mongodb server
+    - installed pm2 npm install pm2 -g
+    - pm2 start npm --name "devConnect-backend" -- start
+    - pm2 list
+    - nginx cofig command - sudo nano /etc/nginx/sites-available/default
+    - nginx config ->  
+
+        server_name 13.60.66.213;
+
+        location /api/ {
+            proxy_pass http://127.0.0.1:7777;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+            proxy_cache_bypass $http_upgrade;
+        }
+
+    - restart nginx - sudo sysetmctl restart nginx
+
+8 - Modify the BASEURL in frontend project to "/api
