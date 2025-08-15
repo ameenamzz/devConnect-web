@@ -53,15 +53,15 @@ If you are developing a production application, we recommend using TypeScript wi
 5 - install node version 22.
 6 - git clone (Frontend)
 
-- npm insall -> in VM
-- npm run build
-- sudo apt udate
-- sudo apt install nginx
-- sudo systemctl start nginx
-- sudo systemctl enable nginx
-- copy code from dist(build files) to /var/www/html
-- sud scp -r dist/* /var/www/html
-- Enable port :80 of your instance
+    - npm insall -> in VM
+    - npm run build
+    - sudo apt udate
+    - sudo apt install nginx
+    - sudo systemctl start nginx
+    - sudo systemctl enable nginx
+    - copy code from dist(build files) to /var/www/html
+    - sud scp -r dist/* /var/www/html
+    - Enable port :80 of your instance
 
 7 - git clone (Backend)
 
@@ -86,3 +86,5 @@ If you are developing a production application, we recommend using TypeScript wi
     - restart nginx - sudo sysetmctl restart nginx
 
 8 - Modify the BASEURL in frontend project to "/api
+9 - npm run build
+10 - sud scp -r dist/* /var/www/html
