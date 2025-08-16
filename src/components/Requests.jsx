@@ -30,7 +30,7 @@ const Requests = () => {
         Requests
       </h1>
       {reuquests.map((req, _id) => (
-        <ConnectionList key={_id} connection={req.fromUserId} _id={req._id} />
+        <ConnectionList key={_id} connection={req.fromUserId} id={req._id} />
       ))}
     </div>
   ) : (

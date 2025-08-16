@@ -4,21 +4,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
 import { removeRequest } from "../utils/requestSlice";
-
-const ConnectionList = ({ connection, _id }) => {
+import { Link } from "react-router-dom";
+const ConnectionList = ({ connection, id }) => {
   const dispatch = useDispatch();
   const request = useSelector((store) => store.request);
   const location = useLocation();
-  const { firstName, lastName, photURL, skills, description } = connection;
+  const { _id, firstName, lastName, photURL, skills, description } = connection;
 
-  const handleConnectionRequests = async (status, _id) => {
+  const handleConnectionRequests = async (status, id) => {
     try {
       const res = await axios.post(
-        BASE_URL + "/request/review/" + status + "/" + _id,
+        BASE_URL + "/request/review/" + status + "/" + id,
         {},
         { withCredentials: true }
       );
-      dispatch(removeRequest(_id));
+      dispatch(removeRequest(id));
     } catch (error) {
       console.log(error);
     }
@@ -45,16 +45,23 @@ const ConnectionList = ({ connection, _id }) => {
               <div className>
                 <button
                   className="btn btn-accent mr-2"
-                  onClick={() => handleConnectionRequests("accepted", _id)}
+                  onClick={() => handleConnectionRequests("accepted", id)}
                 >
                   Accept
                 </button>
                 <button
                   className="btn btn-error"
-                  onClick={() => handleConnectionRequests("rejected", _id)}
+                  onClick={() => handleConnectionRequests("rejected", id)}
                 >
                   Reject
                 </button>
+              </div>
+            )}
+            {location.pathname === "/connections" && (
+              <div className>
+                <Link to={"/chat/" + _id}>
+                  <button className="btn btn-accent mr-2">Chat</button>{" "}
+                </Link>
               </div>
             )}
           </div>

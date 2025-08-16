@@ -60,7 +60,7 @@ If you are developing a production application, we recommend using TypeScript wi
     - sudo systemctl start nginx
     - sudo systemctl enable nginx
     - copy code from dist(build files) to /var/www/html
-    - sud scp -r dist/* /var/www/html
+    - sudo scp -r dist/* /var/www/html
     - Enable port :80 of your instance
 
 7 - git clone (Backend)
@@ -88,3 +88,7 @@ If you are developing a production application, we recommend using TypeScript wi
 8 - Modify the BASEURL in frontend project to "/api
 9 - npm run build
 10 - sud scp -r dist/* /var/www/html
+
+
+Web socket 
+
