@@ -1,10 +1,10 @@
 import axios from "axios";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
 import { removeRequest } from "../utils/requestSlice";
-import { Link } from "react-router-dom";
+
 const ConnectionList = ({ connection, id }) => {
   const dispatch = useDispatch();
   const request = useSelector((store) => store.request);
@@ -25,42 +25,44 @@ const ConnectionList = ({ connection, id }) => {
   };
 
   return (
-    <div className="flex justify-center mb-5">
-      <ul className="list bg-base-300 rounded-box shadow-md w-[40%]">
-        <li className="list-row">
-          <div>
-            <img className="size-10 rounded-box" src={photURL} />
+    <div className="flex justify-center mb-5 px-2">
+      <ul className="list bg-base-300 rounded-box shadow-md w-full sm:w-[80%] md:w-[60%] lg:w-[40%]">
+        <li className="list-row flex flex-col sm:flex-row sm:items-center gap-3 p-3">
+          <div className="flex-shrink-0">
+            <img className="size-12 sm:size-14 rounded-box object-cover" src={photURL} />
           </div>
-          <div className="flex justify-between">
-            <div>
-              <h1 className="text-lg font-bold">
+          <div className="flex flex-col sm:flex-row justify-between w-full gap-3">
+            <div className="flex-1">
+              <h1 className="text-base sm:text-lg font-bold">
                 {firstName} {lastName}
               </h1>
-              <div className="text-xs uppercase font-semibold opacity-60">
+              <div className="text-xs uppercase font-semibold opacity-60 break-words">
                 {skills}
               </div>
-              <p className="list-col-wrap text-xs">{description}</p>
+              <p className="text-xs sm:text-sm break-words">{description}</p>
             </div>
+
             {location.pathname === "/requests" && (
-              <div className>
+              <div className="flex gap-2 self-start sm:self-center">
                 <button
-                  className="btn btn-accent mr-2"
+                  className="btn btn-accent btn-sm sm:btn-md"
                   onClick={() => handleConnectionRequests("accepted", id)}
                 >
                   Accept
                 </button>
                 <button
-                  className="btn btn-error"
+                  className="btn btn-error btn-sm sm:btn-md"
                   onClick={() => handleConnectionRequests("rejected", id)}
                 >
                   Reject
                 </button>
               </div>
             )}
+
             {location.pathname === "/connections" && (
-              <div className>
+              <div className="flex self-start sm:self-center">
                 <Link to={"/chat/" + _id}>
-                  <button className="btn btn-accent mr-2">Chat</button>{" "}
+                  <button className="btn btn-accent btn-sm sm:btn-md">Chat</button>
                 </Link>
               </div>
             )}
